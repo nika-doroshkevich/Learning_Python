@@ -202,3 +202,16 @@ for _ in delegator():
 
 # -------------------------------------
 print("--" * 20)
+
+
+def generator_in_expression():
+    result = (yield 1) + 2
+    yield result
+
+
+gen = generator_in_expression()
+print(next(gen))
+print(gen.send(3))
+
+# -------------------------------------
+print("--" * 20)
